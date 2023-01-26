@@ -1,0 +1,199 @@
+/*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
+/*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  border: px solid red;
+  margin: ;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*------My code starts here-----------*/
+
+#photo-container {
+    display: grid;
+    text-align: center;  /*centers grid items within the container*/
+    background-size: fit-content;
+    padding: 0;
+    margin: 0;
+    
+    
+    
+}
+
+.photo-item {
+   
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-area:
+    header header header header header
+    imgr1 imgr1 imgr1 imgr1 imgr1  
+    imgr2 imgr2 imgr2 imgr2 imgr2
+    imgr3 imgr3 imgr3 imgr3 imgr3 
+    imgr4 imgr4 imgr4 imgr4 imgr4 
+    imgr5 imgr5 imgr5 imgr5 imgr5 ;
+    
+  
+  border: px solid red; 
+
+}
+
+header {
+  grid-area: header;
+  
+}
+
+h1 {
+  font-size: 9rem;
+  line-height: 2ch;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+img {
+  border-radius: 15px;
+  
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+
+.photo-group-1, .photo-group-2, .photo-group-3, .photo-group-4, .photo-group-5 {
+    display: inline-grid;
+    width: 19%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(57, 56, 56, 0.75), 0 6px 20px 0 rgb(21, 21, 21);
+    border: px solid red;
+        
+}
+
+
+.photo-group-1 {
+    
+    grid-area: imgr1;
+    
+}
+
+.photo-group-2 {
+    grid-area: imgr2;
+}
+
+.photo-group-3 {
+    grid-area: imgr3;
+}
+
+.photo-group-4 {
+    grid-area: imgr4;
+}
+
+.photo-group-5 {
+    grid-area: imgr5;
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  h1 {
+    font-size: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+
+/* Testing out ideas found on W3C */
+
+
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transition: transform .2s; /* Animation */
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+
+}
+
